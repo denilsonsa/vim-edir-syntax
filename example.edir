@@ -1,0 +1,38 @@
+1 Foobar.txt
+
+# Comments and empty lines should work fine.
+
+  # Leading whitespace is correctly ignored.
+  2 Leading.txt
+	# Even when using Tabs.
+	3 Tabular.txt
+ 	 	 # Or a mix of both. (But why would anyone do that?)
+ 	 	 4 TabSpace.txt
+
+# Trailing whitespace is highlighted.
+5  ./Why would you put trailing spaces on a filename.txt    
+6  ./Please, don't put tabs on a filename.txt 	 	  
+
+# Numbers can have leading zeros.
+07      Zero.txt
+000008  Zeeeeeeeeeeeeero.txt
+
+# Leading `./` is highlighted.
+# Directories are also highlighted.
+9  ./Fool.txt
+10 ../Parent/Foobar.txt
+11 .config/Foobar.cfg
+12 ./.config/Fool.cfg
+
+# Only the last file extension is highlighted.
+13 ./Very/long/example/tarball.tar.gz
+14 ./Very/long/example/tarball.tar.bz2
+15 ./My Music/Mr. Music/This. Music. Has. Many. Sentences.mp3
+
+# Other non-valid lines are also highlighted.
+0xDEADBEEF Invalid
+Invalid
+16./error
+17./error error
+123abc
+123abc xyz
